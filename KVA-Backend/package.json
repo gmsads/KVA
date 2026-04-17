@@ -1,0 +1,20 @@
+{
+  "name": "keshav-veda-academy-backend",
+  "version": "1.0.0",
+  "description": "Backend for Keshav Veda Academy Management System",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3",
+    "twilio": "^5.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
