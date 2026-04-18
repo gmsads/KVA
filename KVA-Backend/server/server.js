@@ -1,9 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const path = require('path'); // ✅ ADD THIS
+const path = require('path');
 require('dotenv').config();
 
+// ✅ FIXED ROUTE PATHS
 const staffRoutes = require('../routes/staffRoutes');
 const studentRoutes = require('../routes/studentRoutes');
 const feePaymentRoutes = require('../routes/feePayments');
@@ -50,14 +51,14 @@ app.use('/api/scholars', require('../routes/scholars'));
 app.use('/api/attendance', attendanceRoutes);
 app.use('/api/performance', performanceRoutes);
 
-// ✅ 👉 ADD THIS PART (SERVE FRONTEND)
-app.use(express.static(path.join(__dirname, 'build')));
+// ✅ ✅ FIXED FRONTEND PATH (IMPORTANT)
+app.use(express.static(path.join(__dirname, '../build')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.sendFile(path.join(__dirname, '../build', 'index.html'));
 });
 
-// Basic route (optional)
+// Basic API route
 app.get('/api', (req, res) => {
   res.send('API is running...');
 });
