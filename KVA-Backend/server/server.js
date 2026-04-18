@@ -4,11 +4,11 @@ const cors = require('cors');
 const path = require('path'); // ✅ ADD THIS
 require('dotenv').config();
 
-const staffRoutes = require('./routes/staffRoutes');
-const studentRoutes = require('./routes/studentRoutes');
-const feePaymentRoutes = require('./routes/feePayments');
-const attendanceRoutes = require('./routes/attendance');
-const performanceRoutes = require('./routes/performance');
+const staffRoutes = require('../routes/staffRoutes');
+const studentRoutes = require('../routes/studentRoutes');
+const feePaymentRoutes = require('../routes/feePayments');
+const attendanceRoutes = require('../routes/attendance');
+const performanceRoutes = require('../routes/performance');
 
 const app = express();
 
@@ -46,7 +46,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 app.use('/api/students', studentRoutes);
 app.use('/api/staff', staffRoutes);
 app.use('/api/fee-payments', feePaymentRoutes);
-app.use('/api/scholars', require('./routes/scholars'));
+app.use('/api/scholars', require('../routes/scholars'));
 app.use('/api/attendance', attendanceRoutes);
 app.use('/api/performance', performanceRoutes);
 
