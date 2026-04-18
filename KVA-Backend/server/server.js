@@ -52,10 +52,10 @@ app.use('/api/attendance', attendanceRoutes);
 app.use('/api/performance', performanceRoutes);
 
 // ✅ ✅ FIXED FRONTEND PATH (IMPORTANT)
-app.use(express.static(path.join(__dirname, '../build')));
+app.use(express.static(path.join(__dirname, '../dist')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../build', 'index.html'));
+  res.sendFile(path.join(__dirname, '../dist', 'index.html'));
 });
 
 // Basic API route
